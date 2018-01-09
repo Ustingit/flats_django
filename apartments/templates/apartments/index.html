@@ -1,0 +1,9 @@
+{% if latest_apartments_list %}
+    <ul>
+        {%for apartment in latest_apartments_list%}
+            <li><a href="{% url 'apartments:detail' apartment.apartment_id %}">{{ apartment.about }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>В данный момент доступные квартиры отсутствуют.</p>
+{% endif %}
