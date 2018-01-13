@@ -1,7 +1,12 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'apartments/style.css' %}" />
+
 {% if latest_apartments_list %}
+    <h1>ВСЕ КВАРТИРЫ ГОРОДА МИНСКА</h1>
     <ul>
         {%for apartment in latest_apartments_list%}
-            <li><a href="{% url 'apartments:detail' apartment.apartment_id %}">{{ apartment.about }}</a></li>
+            <li><a href="{% url 'apartments:detail' apartment.pk %}">{{ apartment.about }}</a></li>
         {% endfor %}
     </ul>
 {% else %}
