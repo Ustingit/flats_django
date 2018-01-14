@@ -1,23 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+      <title>Belarus Rent Apartments.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+      <style>
+          html, body{
+            height: 100%;
+            max-height: 100%;
+          }
+          .top-container{
+            margin-top: 10%;
+          }
+      </style>
+
   </head>
+
   <body>
-<h1>Это страница с детальной информацией о квартире: {{ apartment.pk }}</h1>
-<ul>
-    <b>Номер телефона: </b>{{ apartment.phone }}<br>
-    <b>Информация о квартире: </b>{{ apartment.about }}<br>
-    <b>URL: </b>{{ apartment.apartment_url }}<br>
-    <b>Информация о владельце: </b>{{ apartment.owner }}<br>
-    <b>Заглавная информация: </b>{{ apartment.apartment_name }}<br>
-    <b>Заголовок: </b>{{ apartment.title }}<br>
-</ul>
+
+    <div class="general-container">
+        <div class="container top-container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h1>Это страница с детальной информацией о квартире: {{ apartment.pk }}</h1>
+
+                    <!-- Contextual button for informational alert messages -->
+                    <button type="button" class="btn btn-info">Info</button>
+                    <div class="title">
+                        <ul>
+                            <b>Номер телефона: </b>{{ apartment.phone }}<br>
+                            <b>Информация о квартире: </b>{{ apartment.about }}<br>
+                            <b>URL: </b>{{ apartment.apartment_url }}<br>
+                            <b>Информация о владельце: </b>{{ apartment.owner }}<br>
+                            <b>Заглавная информация: </b>{{ apartment.apartment_name }}<br>
+                            <b>Заголовок: </b>{{ apartment.title }}<br>
+                         </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 
 
   <!-- jQuery first, then Tether, then Bootstrap JS. -->
@@ -26,4 +57,5 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
   </body>
+
 </html>
