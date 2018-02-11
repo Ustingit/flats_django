@@ -10,29 +10,37 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
-      <style>
-          html, body{
-            height: 100%;
-            max-height: 100%;
-          }
-          .top-container{
-            margin-top: 10%;
-          }
-      </style>
+      {% load staticfiles %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'apartments/detail_style.css' %}" />
 
   </head>
 
   <body>
 
     <div class="general-container">
-        <div class="container top-container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <h1>Это страница с детальной информацией о квартире: {{ apartment.pk }}</h1>
+                    <div class="header-common">
+                        <div class="header-top">
+                            <div class="header-top hd1 logo">
+                                <!-- картинка пока ломает вёрстку -->
+                                <img class="logo-img" src="../../static/apartments/images/logo.png" alt="LOGO">
+                            </div>
+                            <label class="header-top hd1 search">
+                                <form action="https://echo.htmlacademy.ru" method="get" class="search-form">
+                                  <input type="text" name="search">
+                                </form>
+                            </label>
+                            <div class="header-top hd1 help-menu"></div>
+                        </div>
+                        <div class="header-bottom"></div>
+                    </div>
+
+                    <div class="info">
+                        <h1>Это страница с детальной информацией о квартире: {{ apartment.pk }}</h1>
 
                     <!-- Contextual button for informational alert messages -->
                     <button type="button" class="btn btn-info">Info</button>
-                    <div class="title">
+
                         <ul>
                             <b>Номер телефона: </b>{{ apartment.phone }}<br>
                             <b>Информация о квартире: </b>{{ apartment.about }}<br>
@@ -42,14 +50,10 @@
                             <b>Заголовок: </b>{{ apartment.title }}<br>
                          </ul>
                     </div>
-                </div>
-            </div>
-        </div>
+                   <div id="footer">
+   &copy; Юрий Устинович
+  </div>
     </div>
-
-
-
-
 
   <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
